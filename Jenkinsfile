@@ -11,6 +11,7 @@ node {
         /* This builds the actual image */
 
         app = docker.build("vi111/myjenk")
+         echo "Build ok passed"
     }
 
     stage('Test image') {
