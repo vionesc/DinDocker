@@ -5,7 +5,7 @@ RUN apt-get update
 RUN apt-get install  sudo 
 RUN rm -rf /var/lib/apt/lists/*
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
- 
+RUN groupadd -g 978 docker
 RUN usermod -a -G root jenkins
 RUN usermod -a -G docker jenkins
  
