@@ -10,7 +10,8 @@ RUN add-apt-repository \
    stable"
 RUN apt-get update  -qq \
     && apt-get install docker-ce=17.12.1~ce-0~debian -y
-RUN usermod -aG docker jenkins
+RUN usermod -a -G root jenkins
+RUN usermod -a -G docker jenkins
  
 USER jenkins
 COPY plugins.txt /usr/share/jenkins/plugins.txt
